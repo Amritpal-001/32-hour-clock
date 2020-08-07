@@ -1,0 +1,5 @@
+Flask
+gunicorn
+requests_html
+pandas
+requests
