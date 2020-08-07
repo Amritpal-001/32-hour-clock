@@ -5,7 +5,6 @@ app = Flask(__name__)
 
 @app.route('/')
 def homepage():
-    #the_time = datetime.now().strftime("%A, %d %b %Y %l:%M %p")
 
     TimeAtStart = datetime.now(timezone('Asia/Kolkata'))
     seconds = int( TimeAtStart.strftime(" %S " ) )
@@ -30,16 +29,13 @@ def homepage():
             hora = hora + 1
         if hora == 32:
             hora = 0
-        
-            
+    
     return """
     <h1>32 hours clock </h1>
     <p>.       </p>
     <p> {hora} : {minuto} : {zen}</p>
-    <p>.       </p>
-    <p> {hours} : {minutes} : {seconds}</p>
     
-    """.format(hora = hora , minuto = minuto , zen = zen , seconds = seconds, minutes= minutes , hours = hours)
+    """.format(hora = hora , minuto = minuto , zen = zen)
 
 if __name__ == '__main__':
     app.run(debug=True, use_reloader=True)
