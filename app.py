@@ -1,13 +1,7 @@
 from flask import Flask
 
 import time
-
-import pandas
-from datetime import datetime
 app = Flask(__name__)
-
-from yahoo_fin import stock_info as si
-
 
 @app.route('/')
 def homepage():
